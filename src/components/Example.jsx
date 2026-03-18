@@ -9,7 +9,11 @@ function Example({subjectName}) {
         <>
         <div>
             Inside example component
-            <p>Subject name coming from parent component : {subjectName}</p>
+            {   
+            subjectName==="React" &&
+                <p>Subject name coming from parent component : {subjectName}</p>
+            }
+            
         </div>
         </>
     )
