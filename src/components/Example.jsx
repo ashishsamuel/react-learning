@@ -1,3 +1,6 @@
+
+// example of functional component
+
 function Example() {
     return(
         <>
@@ -8,4 +11,4 @@ function Example() {
     )
 }
 
-export default Example
+export default Example;
