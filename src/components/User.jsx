@@ -9,8 +9,15 @@ function User({uname,age}) {
         second: "blue",
         third: "green"
     });
-    // changing the color of second paramter to yellow from blue color
-    // console.log("colors state",colors);
+
+    // array of objects
+    const userArray = [
+        {userName: "Ashish", age:28},
+        {userName: "Amal", age:30},
+        {userName: "Ashwin", age:18},
+        {userName: "Ajmal", age:17},
+        {userName: "Sanju", age:40}
+    ]
     
     const divStyle = {
         display: 'flex',
@@ -34,6 +41,8 @@ function User({uname,age}) {
         console.log("event",event.target.value);
     }
 
+    // changing the color of second paramter to yellow from blue color using spread operator
+    // console.log("colors state",colors);
     const changeColor = (color)=>{
         setColors({...colors,second:color});
     }
@@ -55,7 +64,31 @@ function User({uname,age}) {
         onClick={()=>addUser('ashish')}>Add</button>
         {/* passing an event as an argument */}
         <input type='text' style={{width:'120px',border:'1px solid', padding:'3px 5px'}} placeholder='enter the username' onChange={(e)=>getName(e)}/>
+        {/* state updation */}
         <button onClick={()=>changeColor("yelow")}>Change color</button>
+
+        {/* rendering user array (list of user elements)*/}
+        <h2>All Users</h2>
+        <table>
+            <thead>
+                <tr>
+                <th>Sl No</th>
+                <th>Username</th>
+                <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    userArray.length>0 && userArray.map((user,index)=>(
+                        <tr>
+                          <td>{index+1}</td>
+                          <td>{user.userName}</td>
+                          <td>{user.age}</td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
     </div>
   )
 }
