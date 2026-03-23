@@ -1,9 +1,17 @@
 
 // functional component 
 
-import React from 'react'
+import React, { useState } from 'react'
 
 function User({uname,age}) {
+    const [colors,setColors] = useState({
+        first: "red",
+        second: "blue",
+        third: "green"
+    });
+    // changing the color of second paramter to yellow from blue color
+    // console.log("colors state",colors);
+    
     const divStyle = {
         display: 'flex',
         justifyContent: 'center',
@@ -25,6 +33,13 @@ function User({uname,age}) {
     const getName = (event)=>{
         console.log("event",event.target.value);
     }
+
+    const changeColor = (color)=>{
+        setColors({...colors,second:color});
+    }
+
+    console.log("colors state after updation",colors);
+    
   return (
     <div style={divStyle}>
         {    uname ==="Virat Kohli" ?
@@ -40,6 +55,7 @@ function User({uname,age}) {
         onClick={()=>addUser('ashish')}>Add</button>
         {/* passing an event as an argument */}
         <input type='text' style={{width:'120px',border:'1px solid', padding:'3px 5px'}} placeholder='enter the username' onChange={(e)=>getName(e)}/>
+        <button onClick={()=>changeColor("yelow")}>Change color</button>
     </div>
   )
 }
