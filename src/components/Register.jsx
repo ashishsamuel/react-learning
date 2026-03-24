@@ -18,6 +18,11 @@ function Register() {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log("form values are",studentDetails);
+        alert(`User submitted details 
+            Name: ${studentDetails.name}
+            Gender: ${studentDetails.gender}
+            Stream: ${studentDetails.stream}`
+        )
     } 
 
   return (
