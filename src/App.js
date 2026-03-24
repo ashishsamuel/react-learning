@@ -3,6 +3,8 @@ import './App.css';
 import Example from './components/Example';
 import { Random } from './components/Random';
 import User from './components/User';
+import Forms from './components/Forms';
+import Register from './components/Register';
 
 function App() {
   // usestate hook
@@ -31,6 +33,10 @@ function App() {
       <User uname={userName} age="27"/>
       <h3>Child Class based component</h3>
       <Random/>
+      <h3>Forms component</h3>
+      <Forms/>
+      <h3>Higher secondary Registration</h3>
+      <Register/>
     </>
   );
 }
